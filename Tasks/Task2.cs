@@ -1,0 +1,23 @@
+/*6. Составить алгоритм решения задачи: сколько можно купить
+ * быков, коров и телят, платя за быка 10 руб., за корову — 5 руб., а
+ * за теленка — 0,5 руб., если на 100 руб. надо купить 100 голов скота
+ */
+
+namespace ConsoleApp1.Tasks
+{
+    public static class Task2
+    {
+        public static void Run() {
+
+            for (int bulls = 0; bulls <= 10; bulls++) {
+                for (int cows = 0; cows <= 20; cows++) {
+                    for (int telenok = 0; telenok <= 200; telenok++) {
+                        if (bulls + cows + telenok == 100 && bulls * 10 + cows * 5 + telenok * 0.5 == 100) {
+                            Console.WriteLine($"Быков: {bulls}, Коров: {cows}, Теленков: {telenok}");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
