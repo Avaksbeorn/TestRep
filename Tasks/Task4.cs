@@ -1,7 +1,7 @@
-/*6. На трех участках возделывают сельскохозяйственные культуры. Известны виды культур, выращиваемых на каждом из участ-
- * ков. Определить виды тех культур, которые возделывают на каждом из участков; возделывают хотя бы на одном из участков; не
- * возделывают ни на одном участке. (Культуры: картофель, укроп,
- * морковь, горох, капуста, редис.)
+п»ї/*6. РќР° С‚СЂРµС… СѓС‡Р°СЃС‚РєР°С… РІРѕР·РґРµР»С‹РІР°СЋС‚ СЃРµР»СЊСЃРєРѕС…РѕР·СЏР№СЃС‚РІРµРЅРЅС‹Рµ РєСѓР»СЊС‚СѓСЂС‹. РР·РІРµСЃС‚РЅС‹ РІРёРґС‹ РєСѓР»СЊС‚СѓСЂ, РІС‹СЂР°С‰РёРІР°РµРјС‹С… РЅР° РєР°Р¶РґРѕРј РёР· СѓС‡Р°СЃС‚-
+ * РєРѕРІ. РћРїСЂРµРґРµР»РёС‚СЊ РІРёРґС‹ С‚РµС… РєСѓР»СЊС‚СѓСЂ, РєРѕС‚РѕСЂС‹Рµ РІРѕР·РґРµР»С‹РІР°СЋС‚ РЅР° РєР°Р¶РґРѕРј РёР· СѓС‡Р°СЃС‚РєРѕРІ; РІРѕР·РґРµР»С‹РІР°СЋС‚ С…РѕС‚СЏ Р±С‹ РЅР° РѕРґРЅРѕРј РёР· СѓС‡Р°СЃС‚РєРѕРІ; РЅРµ
+ * РІРѕР·РґРµР»С‹РІР°СЋС‚ РЅРё РЅР° РѕРґРЅРѕРј СѓС‡Р°СЃС‚РєРµ. (РљСѓР»СЊС‚СѓСЂС‹: РєР°СЂС‚РѕС„РµР»СЊ, СѓРєСЂРѕРї,
+ * РјРѕСЂРєРѕРІСЊ, РіРѕСЂРѕС…, РєР°РїСѓСЃС‚Р°, СЂРµРґРёСЃ.)
  */
 
 namespace ConsoleApp1.Tasks
@@ -19,13 +19,13 @@ namespace ConsoleApp1.Tasks
         }
 
         public static void Run() {
-            string[] kultNames = { "картофель", "укроп", "морковь", "горох", "капуста", "редис" };
+            string[] kultNames = { "РєР°СЂС‚РѕС„РµР»СЊ", "СѓРєСЂРѕРї", "РјРѕСЂРєРѕРІСЊ", "РіРѕСЂРѕС…", "РєР°РїСѓСЃС‚Р°", "СЂРµРґРёСЃ" };
 
-            var u1 = GetCulturesFromUser("первого");
-            var u2 = GetCulturesFromUser("второго");
-            var u3 = GetCulturesFromUser("третьего");
+            var u1 = GetCulturesFromUser("РїРµСЂРІРѕРіРѕ");
+            var u2 = GetCulturesFromUser("РІС‚РѕСЂРѕРіРѕ");
+            var u3 = GetCulturesFromUser("С‚СЂРµС‚СЊРµРіРѕ");
 
-            Console.WriteLine("Культуры, возделываемые на всех участках:");
+            Console.WriteLine("РљСѓР»СЊС‚СѓСЂС‹, РІРѕР·РґРµР»С‹РІР°РµРјС‹Рµ РЅР° РІСЃРµС… СѓС‡Р°СЃС‚РєР°С…:");
             foreach (Kult k in Enum.GetValues(typeof(Kult))) {
                 if (u1.Contains(k) && u2.Contains(k) && u3.Contains(k)) {
                     Console.Write(kultNames[(int)k] + " ");
@@ -33,7 +33,7 @@ namespace ConsoleApp1.Tasks
             }
             Console.WriteLine();
 
-            Console.WriteLine("Культуры, возделываемые хотя бы на одном участке:");
+            Console.WriteLine("РљСѓР»СЊС‚СѓСЂС‹, РІРѕР·РґРµР»С‹РІР°РµРјС‹Рµ С…РѕС‚СЏ Р±С‹ РЅР° РѕРґРЅРѕРј СѓС‡Р°СЃС‚РєРµ:");
             foreach (Kult k in Enum.GetValues(typeof(Kult))) {
                 if (u1.Contains(k) || u2.Contains(k) || u3.Contains(k)) {
                     Console.Write(kultNames[(int)k] + " ");
@@ -41,7 +41,7 @@ namespace ConsoleApp1.Tasks
             }
             Console.WriteLine();
 
-            Console.WriteLine("Культуры, не возделываемые ни на одном участке:");
+            Console.WriteLine("РљСѓР»СЊС‚СѓСЂС‹, РЅРµ РІРѕР·РґРµР»С‹РІР°РµРјС‹Рµ РЅРё РЅР° РѕРґРЅРѕРј СѓС‡Р°СЃС‚РєРµ:");
             foreach (Kult k in Enum.GetValues(typeof(Kult))) {
                 if (!u1.Contains(k) && !u2.Contains(k) && !u3.Contains(k)) {
                     Console.Write(kultNames[(int)k] + " ");
@@ -53,17 +53,17 @@ namespace ConsoleApp1.Tasks
         private static HashSet<Kult> GetCulturesFromUser(string sectionName)
         {
             var kultNames = new Dictionary<string, Kult> {
-                { "картофель", Kult.Kartofel },
-                { "укроп", Kult.Ukrop },
-                { "морковь", Kult.Morkov },
-                { "горох", Kult.Goroh },
-                { "капуста", Kult.Kapusta },
-                { "редис", Kult.Redis }
+                { "РєР°СЂС‚РѕС„РµР»СЊ", Kult.Kartofel },
+                { "СѓРєСЂРѕРї", Kult.Ukrop },
+                { "РјРѕСЂРєРѕРІСЊ", Kult.Morkov },
+                { "РіРѕСЂРѕС…", Kult.Goroh },
+                { "РєР°РїСѓСЃС‚Р°", Kult.Kapusta },
+                { "СЂРµРґРёСЃ", Kult.Redis }
             };
 
             var cultures = new HashSet<Kult>();
 
-            Console.WriteLine($"Введите культуры (картофель, укроп, морковь, горох, капуста, редис) для {sectionName} участка (через запятую):");
+            Console.WriteLine($"Р’РІРµРґРёС‚Рµ РєСѓР»СЊС‚СѓСЂС‹ (РєР°СЂС‚РѕС„РµР»СЊ, СѓРєСЂРѕРї, РјРѕСЂРєРѕРІСЊ, РіРѕСЂРѕС…, РєР°РїСѓСЃС‚Р°, СЂРµРґРёСЃ) РґР»СЏ {sectionName} СѓС‡Р°СЃС‚РєР° (С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ):");
             string input = Console.ReadLine();
             string[] inputCultures = input.Split(',');
 
@@ -73,7 +73,7 @@ namespace ConsoleApp1.Tasks
                     cultures.Add(kultNames[trimmedCulture]);
                 }
                 else {
-                    Console.WriteLine($"Культура '{trimmedCulture}' не распознана и будет пропущена.");
+                    Console.WriteLine($"РљСѓР»СЊС‚СѓСЂР° '{trimmedCulture}' РЅРµ СЂР°СЃРїРѕР·РЅР°РЅР° Рё Р±СѓРґРµС‚ РїСЂРѕРїСѓС‰РµРЅР°.");
                 }
             }
 

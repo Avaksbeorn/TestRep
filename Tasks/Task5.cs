@@ -1,4 +1,4 @@
-/*3.Найти количество часов между двумя датами.*/
+п»ї/*3.РќР°Р№С‚Рё РєРѕР»РёС‡РµСЃС‚РІРѕ С‡Р°СЃРѕРІ РјРµР¶РґСѓ РґРІСѓРјСЏ РґР°С‚Р°РјРё.*/
 
 namespace ConsoleApp1.Tasks
 {
@@ -8,24 +8,24 @@ namespace ConsoleApp1.Tasks
             DateTime date1, date2;
             string format = "dd.MM.yyyy";
 
-            Console.WriteLine("Введите первую дату (в формате ДД.ММ.ГГГГ):");
+            Console.WriteLine("Р’РІРµРґРёС‚Рµ РїРµСЂРІСѓСЋ РґР°С‚Сѓ (РІ С„РѕСЂРјР°С‚Рµ Р”Р”.РњРњ.Р“Р“Р“Р“):");
             while (true) {
                 if (DateTime.TryParseExact(Console.ReadLine(), format, null, System.Globalization.DateTimeStyles.None, out date1)) {
                     break;
                 }
-                Console.WriteLine("Некорректный ввод. Пожалуйста, введите дату в формате ДД.ММ.ГГГГ.");
+                Console.WriteLine("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ. РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РґР°С‚Сѓ РІ С„РѕСЂРјР°С‚Рµ Р”Р”.РњРњ.Р“Р“Р“Р“.");
             }
 
-            Console.WriteLine("Введите вторую дату (в формате ДД.ММ.ГГГГ):");
+            Console.WriteLine("Р’РІРµРґРёС‚Рµ РІС‚РѕСЂСѓСЋ РґР°С‚Сѓ (РІ С„РѕСЂРјР°С‚Рµ Р”Р”.РњРњ.Р“Р“Р“Р“):");
             while (true) {
                 if (DateTime.TryParseExact(Console.ReadLine(), format, null, System.Globalization.DateTimeStyles.None, out date2)) {
                     break;
                 }
-                Console.WriteLine("Некорректный ввод. Пожалуйста, введите дату в формате ДД.ММ.ГГГГ.");
+                Console.WriteLine("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ. РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ РґР°С‚Сѓ РІ С„РѕСЂРјР°С‚Рµ Р”Р”.РњРњ.Р“Р“Р“Р“.");
             }
 
             TimeSpan difference = date2 - date1;
-            Console.WriteLine($"Количество часов между датами: {Math.Abs(difference.TotalHours)}");
+            Console.WriteLine($"РљРѕР»РёС‡РµСЃС‚РІРѕ С‡Р°СЃРѕРІ РјРµР¶РґСѓ РґР°С‚Р°РјРё: {Math.Abs(difference.TotalHours)}");
         }
     }
 }
